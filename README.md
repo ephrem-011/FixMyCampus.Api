@@ -1,4 +1,4 @@
-# Selected Challenge Name - FixMyCampus
+# Team Name - Team 22 Selected Challenge - FixMyCampus
 ## Team Members & Responsibilities
 - Ephrem Fekadu — Team Lead & Pitch
 - Ibrahim Mufid — Frontend Developer

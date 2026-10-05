@@ -1,6 +1,7 @@
 using FixMyCampus.Api.DTOs.Auth;
 using FixMyCampus.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http.Metadata;
 
 namespace FixMyCampus.Api.Controllers;
 
@@ -15,7 +16,10 @@ public class AuthController : ControllerBase
         _authService = authService;
     }
 
+
     [HttpPost("login")]
+        [EndpointSummary("Authenticate a user")]
+[EndpointDescription("Validates the user's email and password and returns a JWT token.")]
     public async Task<IActionResult> Login(LoginRequest request)
     {
         var result = await _authService.LoginAsync(request);

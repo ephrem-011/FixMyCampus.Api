@@ -1,3 +1,15 @@
+# Selected Challenge Name - FixMyCampus
+## Team Members & Responsibilities
+- Ephrem Fekadu — Team Lead & Pitch
+- Ibrahim Mufid — Frontend Developer
+- Soliyana Tesfaye — Frontend Developer
+- Tamiru Asbe — Frontend Developer
+- Abdulfeta Sani — Backend Developer
+- Ephrem Fekadu — Backend Developer
+- Abdulfeta Sani — Database & Full-Stack Developer
+- Ephrem Fekadu — Database & Full-Stack Developer
+- Ibrahim Mufid — QA & Testing
+
 # FixMyCampus API
 
 Backend API for **FixMyCampus**, a campus issue reporting and maintenance tracking system. Students and staff can report campus problems, while administrators and technicians manage tickets through a controlled workflow.

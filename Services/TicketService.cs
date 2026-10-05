@@ -287,11 +287,11 @@ public class TicketService : ITicketService
         return await _context.Users
             .AsNoTracking()
             .Where(x => x.Role == UserRole.Technician)
-            .OrderBy(x => x.Name)
+            .OrderBy(x => x.FullName)
             .Select(x => new UserResponse
             {
                 Id = x.Id,
-                Name = x.Name,
+                Name = x.FullName,
                 Email = x.Email,
                 Role = x.Role
             })
@@ -310,9 +310,9 @@ public class TicketService : ITicketService
             BuildingId = ticket.BuildingId,
             BuildingName = ticket.Building.Name,
             ReporterId = ticket.ReporterId,
-            ReporterName = ticket.Reporter.Name,
+            ReporterName = ticket.Reporter.FullName,
             TechnicianId = ticket.TechnicianId,
-            TechnicianName = ticket.Technician?.Name,
+            TechnicianName = ticket.Technician?.FullName,
             CreatedAt = ticket.CreatedAt,
             UpdatedAt = ticket.UpdatedAt,
 
@@ -324,7 +324,7 @@ public class TicketService : ITicketService
                     FromStatus = x.FromStatus,
                     ToStatus = x.ToStatus,
                     ChangedById = x.ChangedById,
-                    ChangedByName = x.ChangedBy.Name,
+                    ChangedByName = x.ChangedBy.FullName,
                     ChangedAt = x.ChangedAt
                 })
                 .ToList()

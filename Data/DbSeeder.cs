@@ -16,45 +16,45 @@ public static class DbSeeder
             {
                 new User
                 {
-                    Name = "System Admin",
+                    FullName = "System Admin",
                     Email = "admin@hackathon.local",
-                    Password = BCrypt.Net.BCrypt.HashPassword("Admin123!"),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword("Admin123!"),
                     Role = UserRole.Admin,
                     CreatedAt = DateTime.UtcNow
                 },
 
                 new User
                 {
-                    Name = "Student Reporter",
+                    FullName = "Student Reporter",
                     Email = "user@hackathon.local",
-                    Password = BCrypt.Net.BCrypt.HashPassword("User123!"),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword("User123!"),
                     Role = UserRole.Reporter,
                     CreatedAt = DateTime.UtcNow
                 },
 
                 new User
                 {
-                    Name = "Sara Reporter",
+                    FullName = "Sara Reporter",
                     Email = "sara@hackathon.local",
-                    Password = BCrypt.Net.BCrypt.HashPassword("User123!"),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword("User123!"),
                     Role = UserRole.Reporter,
                     CreatedAt = DateTime.UtcNow
                 },
 
                 new User
                 {
-                    Name = "Abebe Technician",
+                    FullName = "Abebe Technician",
                     Email = "abebe@hackathon.local",
-                    Password = BCrypt.Net.BCrypt.HashPassword("Tech123!"),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword("Tech123!"),
                     Role = UserRole.Technician,
                     CreatedAt = DateTime.UtcNow
                 },
 
                 new User
                 {
-                    Name = "Marta Technician",
+                    FullName = "Marta Technician",
                     Email = "marta@hackathon.local",
-                    Password = BCrypt.Net.BCrypt.HashPassword("Tech123!"),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword("Tech123!"),
                     Role = UserRole.Technician,
                     CreatedAt = DateTime.UtcNow
                 }

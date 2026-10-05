@@ -20,6 +20,8 @@ public class TicketsController : ControllerBase
     }
 
     [HttpGet]
+        [EndpointSummary("Get all tickets")]
+[EndpointDescription("Returns all tickets with optional building and status filters.")]
     [Authorize(Roles = "Admin,Reporter,Technician")]
     public async Task<ActionResult<List<TicketResponse>>> GetTickets(
         [FromQuery] string? building,
@@ -32,7 +34,10 @@ public class TicketsController : ControllerBase
         return Ok(tickets);
     }
 
+
     [HttpGet("{id:int}")]
+    [EndpointSummary("Get a ticket by ID")]
+[EndpointDescription("Returns detailed information about a specific ticket.")]
     [Authorize(Roles = "Admin,Reporter,Technician")]
     public async Task<ActionResult<TicketResponse>> GetTicket(
         int id)
@@ -42,7 +47,10 @@ public class TicketsController : ControllerBase
         return Ok(ticket);
     }
 
+
     [HttpGet("my")]
+    [EndpointSummary("Get my tickets")]
+[EndpointDescription("Returns all tickets reported by the currently authenticated user.")]
     [Authorize(Roles = "Reporter")]
     public async Task<ActionResult<List<TicketResponse>>> GetMyTickets()
     {
@@ -53,7 +61,10 @@ public class TicketsController : ControllerBase
         return Ok(tickets);
     }
 
+
     [HttpPost]
+    [EndpointSummary("Create a ticket")]
+[EndpointDescription("Creates a new campus issue ticket for the authenticated reporter.")]
     [Authorize(Roles = "Reporter")]
     public async Task<ActionResult<TicketResponse>> CreateTicket(
         CreateTicketRequest request)
@@ -70,7 +81,10 @@ public class TicketsController : ControllerBase
             ticket);
     }
 
+
     [HttpPut("{id:int}/assign")]
+    [EndpointSummary("Assign a ticket")]
+[EndpointDescription("Assigns a ticket to a technician. Only administrators can perform this action.")]
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> AssignTicket(
         int id,
@@ -89,7 +103,10 @@ public class TicketsController : ControllerBase
         });
     }
 
+
     [HttpPut("{id:int}/status")]
+        [EndpointSummary("Update ticket status")]
+    [EndpointDescription("Updates the status of a ticket. Only administrators and technicians can perform this action.")]
     [Authorize(Roles = "Admin,Technician")]
     public async Task<IActionResult> UpdateStatus(
         int id,
@@ -108,7 +125,10 @@ public class TicketsController : ControllerBase
         });
     }
 
+
     [HttpGet("buildings")]
+        [EndpointSummary("Get all buildings")]
+    [EndpointDescription("Returns a list of all buildings in the system.")]
     [Authorize(Roles = "Admin,Reporter,Technician")]
     public async Task<ActionResult<List<BuildingResponse>>> GetBuildings()
     {
@@ -117,7 +137,10 @@ public class TicketsController : ControllerBase
         return Ok(buildings);
     }
 
+
     [HttpGet("technicians")]
+    [EndpointSummary("Get all technicians")]
+[EndpointDescription("Returns all available technicians. Only administrators can access this endpoint.")]
     [Authorize(Roles = "Admin")]
     public async Task<ActionResult<List<UserResponse>>> GetTechnicians()
     {
